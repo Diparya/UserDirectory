@@ -1,50 +1,75 @@
-# Welcome to your Expo app 👋
+# User Directory App
+## Overview
+The User Directory App is a React Native application built using Expo. It fetches a list of users from the JSONPlaceholder API and displays their information in a user-friendly interface. The app includes the following features:
+- **User List Screen**: Displays a list of users with their names and emails.
+- **User Details Screen**: Provides more detailed information about the selected user, such as their address and company details.
+- **Infinite Scrolling**: Dynamically loads more users as you scroll down.
+- **Navigation**: Allows smooth navigation between the user list and details screen.
+- **Error Handling**: Gracefully handles API failures.
+- **Modern UI**: Features a clean, responsive, and visually appealing design.
+## Features
+### User List Screen
+- Fetches a list of users from the API.
+- Displays user name and email in a card-style layout.
+- Implements infinite scrolling to load additional users.
+- Allows navigation to the details screen when a user is selected.
+### User Details Screen
+- Fetches detailed user information using the user ID.
+- Displays name, email, address (street, city, and zip), and company name.
+- Includes a back button to return to the user list.
+### Error Handling
+- Displays a loading spinner while fetching data.
+- Shows an error message if data fetching fails.
+### Technologies Used
+- **React Native**: For building the mobile app.
+- **Expo**: For easy app development and testing.
+- **Expo Router**: For navigation.
+- **Axios**: For making API calls.
+- **JSONPlaceholder API**: Mock API for user data.
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
-
-## Get started
-
-1. Install dependencies
-
+## Installation
+Follow these steps to run the app on your local machine:
+1. Clone the Repository:
+   ```bash
+   git clone https://github.com/Diparya/UserDirectory.git
+   cd UserDirectory
+2. Install Dependencies: Make sure you have Node.js and npm installed. Then, run:
    ```bash
    npm install
-   ```
-
-2. Start the app
-
+3. Install Expo CLI: If you don’t have Expo CLI installed, install it globally:
    ```bash
-    npx expo start
-   ```
+   npm install -g expo-cli
+4. Run the App: Start the Expo development server:
+   ```bash
+   npm start
+5. View the App:
+- Use the Expo Go app on your mobile device (scan the QR code).
+- Alternatively, use an emulator or simulator (iOS or Android).
 
-In the output, you'll find options to open the app in a
+## File Structure
+      ```bash
+      app/
+        |-- index.jsx       # User List Screen
+        |-- user/
+            |-- [id].jsx    # User Details Screen
+        |-- _layout.jsx     # Layout configuration for navigation
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+## How to Use
+1. Launch the app using the steps outlined in the Installation section.
+2. View a list of users on the main screen.
+3. Tap on a user to navigate to the details screen.
+4. View the detailed information about the user and return to the main screen using the back button.
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+## Design Highlights
+- **Responsive Design**: Works seamlessly on various screen sizes.
+- **Intuitive Navigation**: Easy to navigate between screens.
+- **Optimized Performance**: Efficient API calls and smooth scrolling.
 
-## Get a fresh project
+## Known Issues
+- **Network Dependency**: The app requires a stable internet connection to fetch data.
+- **Mock API Limitations**: The JSONPlaceholder API may have data limitations.
 
-When you're ready, run:
-
-```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+## Future Enhancements
+- Add search functionality to filter users by name.
+- Improve error handling with retry options.
+- Implement unit tests for key components.
